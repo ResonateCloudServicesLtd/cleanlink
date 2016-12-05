@@ -89,7 +89,7 @@
 										"AccessKey": "",
 										"SecretKey": "",
 										"Region": "eu-west-1",
-										"LogGroup": "Win-logs",
+										"LogGroup": "Win-Logs",
 										"LogStream": "{instance_id}"
 								}
 							},
