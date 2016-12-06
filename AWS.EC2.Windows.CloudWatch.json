@@ -57,72 +57,72 @@
                     "Unit": "Megabytes",
                     "DimensionName": "",
                     "DimensionValue": ""
-                }
-            },
-            {
-								"Id": "MyAppLog",
-								"FullName":  "AWS.EC2.Windows.CloudWatch.CustomLog.CustomLogInputComponent,AWS.EC2.Windows.CloudWatch",
-								"Parameters": {
-										"LogDirectoryPath": "C:\\myapp\\logs",
-										"TimestampFormat": "yyyy-MM-dd HH:mm:ss",
-										"Encoding": "UTF-8",
-										"Filter": "",
-										"CultureName": "en-US",
-										"TimeZoneKind": "UTC"
-								}
-						},
-            {
-								"Id": "CloudWatchLogsIIS",
-								"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatchLogsOutput,AWS.EC2.Windows.CloudWatch",
-								"Parameters": {
-										"AccessKey": "",
-										"SecretKey": "",
-										"Region": "eu-west-1",
-										"LogGroup": "Web-Logs",
-										"LogStream": "{instance_id}"
-								}
-						},
-            {
-							"Id": "CloudWatchLogs",
-							"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatchLogsOutput,AWS.EC2.Windows.CloudWatch",
-							"Parameters": {
-										"AccessKey": "",
-										"SecretKey": "",
-										"Region": "eu-west-1",
-										"LogGroup": "Win-Logs",
-										"LogStream": "{instance_id}"
-								}
-							},
-							{
-								"Id": "CloudWatchLogsMyApp",
-								"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatchLogsOutput,AWS.EC2.Windows.CloudWatch",
-								"Parameters": {
-										"AccessKey": "",
-										"SecretKey": "",
-										"Region": "eu-west-1",
-										"LogGroup": "App-Logs",
-										"LogStream": "{instance_id}"
-								}
-            	},
-							{
-								"Id": "CloudWatch",
-								"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatch.CloudWatchOutputComponent,AWS.EC2.Windows.CloudWatch",
-								"Parameters": {
-										"AccessKey": "",
-										"SecretKey": "",
-										"Region": "eu-west-1",
-										"NameSpace": "Windows/Default"
-									}
-								}
-			],
-			"Flows": {
-					"Flows":
-							[
-								"(ApplicationEventLog,SystemEventLog,SecurityEventLog,ETW),CloudWatchLogs",
-								"IISLog,CloudWatchLogsIIS",
-								"PerformanceCounter,CloudWatch",
-								"MyAppLog,CloudWatchLogsMyApp"
-							]
-				}
+               }
+           },
+           {
+				"Id": "CleanLinkAppLog",
+					"FullName":  "AWS.EC2.Windows.CloudWatch.CustomLog.CustomLogInputComponent,AWS.EC2.Windows.CloudWatch",
+					"Parameters": {
+							"LogDirectoryPath": "C:\\__PATH_TO_LOGS__",
+							"TimestampFormat": "yyyy-MM-dd HH:mm:ss",
+							"Encoding": "UTF-8",
+							"Filter": "",
+							"CultureName": "en-US",
+							"TimeZoneKind": "UTC"
+					}
+			},
+         {
+					"Id": "CloudWatchLogsIIS",
+					"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatchLogsOutput,AWS.EC2.Windows.CloudWatch",
+					"Parameters": {
+							"AccessKey": "",
+							"SecretKey": "",
+							"Region": "eu-west-1",
+							"LogGroup": "__HOST__WebLogs",
+							"LogStream": "{instance_id}"
+					}
+			},
+         {
+				"Id": "CloudWatchLogs",
+				"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatchLogsOutput,AWS.EC2.Windows.CloudWatch",
+				"Parameters": {
+							"AccessKey": "",
+							"SecretKey": "",
+							"Region": "eu-west-1",
+							"LogGroup": "__HOST__HostLogs",
+							"LogStream": "{instance_id}"
+					}
+				},
+				{
+					"Id": "CloudWatchLogsCleanLinkApp",
+					"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatchLogsOutput,AWS.EC2.Windows.CloudWatch",
+					"Parameters": {
+							"AccessKey": "",
+							"SecretKey": "",
+							"Region": "eu-west-1",
+							"LogGroup": "__HOST__AppLogs",
+							"LogStream": "{instance_id}"
+					}
+         	},
+				{
+					"Id": "CloudWatch",
+					"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatch.CloudWatchOutputComponent,AWS.EC2.Windows.CloudWatch",
+					"Parameters": {
+							"AccessKey": "",
+							"SecretKey": "",
+							"Region": "eu-west-1",
+							"NameSpace": "Windows/Default"
+						}
+					}
+	],
+	"Flows": {
+		"Flows":
+			[
+				"(ApplicationEventLog,SystemEventLog,SecurityEventLog,ETW),CloudWatchLogs",
+				"IISLog,CloudWatchLogsIIS",
+				"PerformanceCounter,CloudWatch",
+				"CleanLinkAppLog,CloudWatchLogsCleanLinkApp"
+			]
 		}
+	}
 }
