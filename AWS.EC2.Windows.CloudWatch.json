@@ -1,123 +1,122 @@
 {
-    "EngineConfiguration": {
-        "PollInterval": "00:00:15",
-        "Components": [
-            {
-                "Id": "ApplicationEventLog",
-                "FullName": "AWS.EC2.Windows.CloudWatch.EventLog.EventLogInputComponent,AWS.EC2.Windows.CloudWatch",
-                "Parameters": {
-                    "LogName": "Application",
-                    "Levels": "1"
-                }
-            },
-            {
-                "Id": "SystemEventLog",
-                "FullName": "AWS.EC2.Windows.CloudWatch.EventLog.EventLogInputComponent,AWS.EC2.Windows.CloudWatch",
-                "Parameters": {
-                    "LogName": "System",
-                    "Levels": "7"
-                }
-            },
-            {
-                "Id": "SecurityEventLog",
-                "FullName": "AWS.EC2.Windows.CloudWatch.EventLog.EventLogInputComponent,AWS.EC2.Windows.CloudWatch",
-                "Parameters": {
-                "LogName": "Security",
-                "Levels": "7"
-                }
-            },
-            {
-                "Id": "ETW",
-                "FullName": "AWS.EC2.Windows.CloudWatch.EventLog.EventLogInputComponent,AWS.EC2.Windows.CloudWatch",
-                "Parameters": {
-                    "LogName": "Microsoft-Windows-WinINet/Analytic",
-                    "Levels": "7"
-                }
-            },
-            {
-                "Id": "IISLog",
-                "FullName":  "AWS.EC2.Windows.CloudWatch.CustomLog.CustomLogInputComponent,AWS.EC2.Windows.CloudWatch",
-                "Parameters": {
-			             "LogDirectoryPath": "C:\\inetpub\\logs\\LogFiles\\W3SVC1",
-                   "TimestampFormat": "yyyy-MM-dd HH:mm:ss",
-                   "Encoding": "UTF-8",
-                   "Filter": "",
-                   "CultureName": "en-US",
-                   "TimeZoneKind": "UTC"
-                }
-            },
-            {
-                "Id": "PerformanceCounter",
-                "FullName": "AWS.EC2.Windows.CloudWatch.PerformanceCounterComponent.PerformanceCounterInputComponent,AWS.EC2.Windows.CloudWatch",
-                "Parameters": {
-                    "CategoryName": "Memory",
-                    "CounterName": "Available MBytes",
-                    "InstanceName": "",
-                    "MetricName": "Memory",
-                    "Unit": "Megabytes",
-                    "DimensionName": "",
-                    "DimensionValue": ""
-               }
-           },
-           {
-				"Id": "CleanLinkAppLog",
-					"FullName":  "AWS.EC2.Windows.CloudWatch.CustomLog.CustomLogInputComponent,AWS.EC2.Windows.CloudWatch",
-					"Parameters": {
-							"LogDirectoryPath": "C:\\__PATH_TO_LOGS__",
-							"TimestampFormat": "yyyy-MM-dd HH:mm:ss",
-							"Encoding": "UTF-8",
-							"Filter": "",
-							"CultureName": "en-US",
-							"TimeZoneKind": "UTC"
-					}
-			},
-         {
-					"Id": "CloudWatchLogsIIS",
-					"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatchLogsOutput,AWS.EC2.Windows.CloudWatch",
-					"Parameters": {
-							"AccessKey": "",
-							"SecretKey": "",
-							"Region": "eu-west-1",
-							"LogGroup": "__HOST__WebLogs",
-							"LogStream": "{instance_id}"
-					}
-			},
-         {
-				"Id": "CloudWatchLogs",
-				"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatchLogsOutput,AWS.EC2.Windows.CloudWatch",
-				"Parameters": {
-							"AccessKey": "",
-							"SecretKey": "",
-							"Region": "eu-west-1",
-							"LogGroup": "__HOST__HostLogs",
-							"LogStream": "{instance_id}"
-					}
-				},
-				{
-					"Id": "CloudWatchLogsCleanLinkApp",
-					"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatchLogsOutput,AWS.EC2.Windows.CloudWatch",
-					"Parameters": {
-							"AccessKey": "",
-							"SecretKey": "",
-							"Region": "eu-west-1",
-							"LogGroup": "__HOST__AppLogs",
-							"LogStream": "{instance_id}"
-					}
-         	},
-				{
-					"Id": "CloudWatch",
-					"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatch.CloudWatchOutputComponent,AWS.EC2.Windows.CloudWatch",
-					"Parameters": {
-							"AccessKey": "",
-							"SecretKey": "",
-							"Region": "eu-west-1",
-							"NameSpace": "Windows/Default"
-						}
-					}
+	"EngineConfiguration": {
+		"PollInterval": "00:00:15",
+		"Components": [
+			{
+			"Id": "ApplicationEventLog",
+			"FullName": "AWS.EC2.Windows.CloudWatch.EventLog.EventLogInputComponent,AWS.EC2.Windows.CloudWatch",
+			"Parameters": {
+				"LogName": "Application",
+				"Levels": "1"
+			}
+		},
+		{
+			"Id": "SystemEventLog",
+			"FullName": "AWS.EC2.Windows.CloudWatch.EventLog.EventLogInputComponent,AWS.EC2.Windows.CloudWatch",
+			"Parameters": {
+				"LogName": "System",
+				"Levels": "7"
+			}
+		},
+		{
+			"Id": "SecurityEventLog",
+			"FullName": "AWS.EC2.Windows.CloudWatch.EventLog.EventLogInputComponent,AWS.EC2.Windows.CloudWatch",
+			"Parameters": {
+				"LogName": "Security",
+				"Levels": "7"
+			}
+		},
+		{
+			"Id": "ETW",
+			"FullName": "AWS.EC2.Windows.CloudWatch.EventLog.EventLogInputComponent,AWS.EC2.Windows.CloudWatch",
+			"Parameters": {
+				"LogName": "Microsoft-Windows-WinINet/Analytic",
+				"Levels": "7"
+			}
+		},
+		{
+			"Id": "IISLog",
+			"FullName":"AWS.EC2.Windows.CloudWatch.CustomLog.CustomLogInputComponent,AWS.EC2.Windows.CloudWatch",
+			"Parameters": {
+				"LogDirectoryPath": "C:\\inetpub\\logs\\LogFiles\\W3SVC1",
+				"TimestampFormat": "yyyy-MM-dd HH:mm:ss",
+				"Encoding": "UTF-8",
+				"Filter": "",
+				"CultureName": "en-US",
+				"TimeZoneKind": "UTC"
+			}
+		},
+		{
+			"Id": "PerformanceCounter",
+			"FullName": "AWS.EC2.Windows.CloudWatch.PerformanceCounterComponent.PerformanceCounterInputComponent,AWS.EC2.Windows.CloudWatch",
+			"Parameters": {
+				"CategoryName": "Memory",
+				"CounterName": "Available MBytes",
+				"InstanceName": "",
+				"MetricName": "Memory",
+				"Unit": "Megabytes",
+				"DimensionName": "",
+				"DimensionValue": ""
+			}
+		},
+		{
+			"Id": "CleanLinkAppLog",
+			"FullName":"AWS.EC2.Windows.CloudWatch.CustomLog.CustomLogInputComponent,AWS.EC2.Windows.CloudWatch",
+			"Parameters": {
+				"LogDirectoryPath": "C:\\__PATH_TO_LOGS__",
+				"TimestampFormat": "yyyy-MM-dd HH:mm:ss",
+				"Encoding": "UTF-8",
+				"Filter": "",
+				"CultureName": "en-US",
+				"TimeZoneKind": "UTC"
+			}
+		},
+		{
+			"Id": "CloudWatchLogsIIS",
+			"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatchLogsOutput,AWS.EC2.Windows.CloudWatch",
+			"Parameters": {
+				"AccessKey": "",
+				"SecretKey": "",
+				"Region": "eu-west-1",
+				"LogGroup": "__HOST__WebLogs",
+				"LogStream": "{instance_id}"
+			}
+		},
+		{
+			"Id": "CloudWatchLogs",
+			"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatchLogsOutput,AWS.EC2.Windows.CloudWatch",
+			"Parameters": {
+				"AccessKey": "",
+				"SecretKey": "",
+				"Region": "eu-west-1",
+				"LogGroup": "__HOST__HostLogs",
+				"LogStream": "{instance_id}"
+			}
+		},
+		{
+			"Id": "CloudWatchLogsCleanLinkApp",
+			"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatchLogsOutput,AWS.EC2.Windows.CloudWatch",
+			"Parameters": {
+				"AccessKey": "",
+				"SecretKey": "",
+				"Region": "eu-west-1",
+				"LogGroup": "__HOST__AppLogs",
+				"LogStream": "{instance_id}"
+			}
+		},
+		{
+			"Id": "CloudWatch",
+			"FullName": "AWS.EC2.Windows.CloudWatch.CloudWatch.CloudWatchOutputComponent,AWS.EC2.Windows.CloudWatch",
+			"Parameters": {
+				"AccessKey": "",
+				"SecretKey": "",
+				"Region": "eu-west-1",
+				"NameSpace": "Windows/Default"
+			}
+		}
 	],
-	"Flows": {
-		"Flows":
-			[
+		"Flows": {
+			"Flows":[
 				"(ApplicationEventLog,SystemEventLog,SecurityEventLog,ETW),CloudWatchLogs",
 				"IISLog,CloudWatchLogsIIS",
 				"PerformanceCounter,CloudWatch",
