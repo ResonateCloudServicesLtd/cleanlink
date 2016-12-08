@@ -1,5 +1,3 @@
-// cleanlinkmobileeu
-// C:\inetpub\wwwroot\CleanLink.WebUI_deploy\App_Data 
 {
 	"EngineConfiguration": {
 		"PollInterval": "00:00:15",
@@ -65,7 +63,7 @@
 			"Id": "CleanLinkAppLog",
 			"FullName":"AWS.EC2.Windows.CloudWatch.CustomLog.CustomLogInputComponent,AWS.EC2.Windows.CloudWatch",
 			"Parameters": {
-				"LogDirectoryPath": "C:\\__PATH_TO_LOGS__",
+				"LogDirectoryPath": "C:\\inetpub\\wwwroot\\CleanLink.WebUI_deploy\\App_Data", 
 				"TimestampFormat": "yyyy-MM-dd HH:mm:ss",
 				"Encoding": "UTF-8",
 				"Filter": "",
@@ -80,7 +78,7 @@
 				"AccessKey": "",
 				"SecretKey": "",
 				"Region": "eu-west-1",
-				"LogGroup": "__HOST__WebLogs",
+				"LogGroup": "MobileWebLogs",
 				"LogStream": "{instance_id}"
 			}
 		},
@@ -91,7 +89,7 @@
 				"AccessKey": "",
 				"SecretKey": "",
 				"Region": "eu-west-1",
-				"LogGroup": "__HOST__HostLogs",
+				"LogGroup": "MobileHostLogs",
 				"LogStream": "{instance_id}"
 			}
 		},
@@ -102,7 +100,7 @@
 				"AccessKey": "",
 				"SecretKey": "",
 				"Region": "eu-west-1",
-				"LogGroup": "__HOST__AppLogs",
+				"LogGroup": "MobileAppLogs",
 				"LogStream": "{instance_id}"
 			}
 		},
